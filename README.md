@@ -1,4 +1,4 @@
-# the-first-order
+# Aster
 Settling first order of business and itinerary of the projects in progress on this GitHub
 
 28th July 2025-
