@@ -6,8 +6,12 @@ I'm finishing my portfolio Lys, it's been live at divijganjoo.me for a week now
 
 Pending-
 Project Camellia: A Cloud-based Skill Sharing Platform written in Go, Python, Typescript, React, hosted on AWS and Vercel.
+
 Project Nargis: A Productivity Management and Tracker Suite Application written in MERN, Typescript, undecided
+
 Project Convonnect (name liable to change): A Real-time chatroom for collaboration, research and academic purposes written in Elixir, Phoenix, Typescript, React, Python
+
+A web-server project in Go to learn the language properly.
 
 Writing-
 Softer on my eyes- A metaphysical exploration of the vastness and ironical mundaneness of life from the lens of wilting youth.
