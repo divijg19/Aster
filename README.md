@@ -5,10 +5,12 @@ Roadmap of business on Github
 I'm finishing my portfolio Lys, it's been live at divijganjoo.me for a week now
 - September:
 
-[x]  Lys done
-[x]  Gamemaster
-[x]  Wartracker
-[x]  Iris Go Web Server
+[x] Lys
+[x] Gamemaster
+[x] Wartracker
+[x] Iris Go Web Server
+
+
 Pending-
 Project Camellia: A Cloud-based Skill Sharing Platform written in Go, Python, Typescript, React, hosted on AWS and Vercel.
 
