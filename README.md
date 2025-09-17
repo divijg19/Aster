@@ -4,6 +4,7 @@ Roadmap of business on Github
 28th July 2025-
 I'm finishing my portfolio Lys, it's been live at divijganjoo.me for a week now
 - September:
+
 [x]  Lys done
 [x]  Gamemaster
 [x]  Wartracker
