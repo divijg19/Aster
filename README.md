@@ -1,24 +1,5 @@
 # Aster
-Roadmap of business on Github
-
-28th July 2025-
-I'm finishing my portfolio Lys, it's been live at divijganjoo.me for a week now
-- September:
-
-[x] Lys
-[x] Gamemaster
-[x] Wartracker
-[x] Iris Go Web Server
-
-
-Pending-
-Project Camellia: A Cloud-based Skill Sharing Platform written in Go, Python, Typescript, React, hosted on AWS and Vercel.
-
-Project Nargis: A Productivity Management and Tracker Suite Application written in MERN, Typescript, undecided
-
-Project Convonnect (name liable to change): A Real-time chatroom for collaboration, research and academic purposes written in Elixir, Phoenix, Typescript, React, Python
-
-A web-server project in Go to learn the language properly.
+Current business
 
 Writing-
 Softer on my eyes- A metaphysical exploration of the vastness and ironical mundaneness of life from the lens of wilting youth.
@@ -27,83 +8,48 @@ Softer on my eyes- A metaphysical exploration of the vastness and ironical munda
 
 ---
 
-### **1. Nargis (AI productivity manager) – 🔥 Top pick**
+My finalization over my pursuits for the next 10 years:
 
-* **Why**:
+*Career stack:* immediate focus
+- Python(+Mojo)- DSA mastery- 
 
-  * Directly aligns with your **career focus (Backend + AIML)** → Python + ML + productivity automation.
-  * Showcases **AI, backend engineering, real-time integration** (spreadsheets, trackers, metrics).
-  * Tangible, personal utility → you’ll actually use it daily → more likely to sustain development.
-  * Perfect portfolio/recruiter project → combines **AI, backend, frontend, real-time updates**.
+Tier1 (Core)- Pandas, Numpy, Pydantic, FastAPI, Polars
 
----
+Tier2 (AI Eng)-  PyTorch,
+(LangChain)+ LangGraph, HuggingFace, LitServe
 
-### **2. Convonnect (real-time chat & collab site)**
+Tier3 (Scale and Inference)-
+HTTPX, Ray, Mojo
+ 
+- Golang - DSA adept
 
-* **Why**:
+Tier1 (Core)- Chi, net/http, Coder/Websocket(nhooyr),pgx
 
-  * Solid **backend + systems engineering** exercise → concurrency (Go/Elixir), scaling, WebSockets.
-  * Demonstrates **real-time systems** & database work → in-demand skillset.
-  * Recruiters love seeing chat/collab apps done well.
+Tier2 (Systems)- ConnectRPC, gRPC, Fiber, Viper, Cobra
 
-* **Stack fit**: Go (backend), TS/React (frontend), Postgre (DB). Good playground for your current stack.
+Study Gin and Gorilla/Websocket
 
----
+Tier3 (Ops)- Temporal.io, Fx, Testcontainers
 
-### **3. rig (Go runtime + package manager)**
+- Typescript ✅
 
-* **Why**:
+Next.js, React, Tanstack Query, shadcn UI, zod, Zustand✅
 
-  * Ambitious **systems-level project** → unique and niche, perfect if you want to stand out in Go community.
-  * Career benefit: shows **deep understanding of Go’s ecosystem and dev tooling**.
-  * But: heavy lift, long-term. Needs strong Go chops first.
+*Personal projects/Passion:* occasional and self-paced
+- Golang- Gin/Chi/Fyne/Fiber/Viper/Cobra/Coder(nhooyr)
+- HTMX
+- Templ
+- Flutter
+- Zig
+- WASM, WebGPU, WebGL, Web3
 
-* Best as a **later project** once you’re very comfortable with Go internals.
+*Game dev part-time:* becomes focus when comfort with job
+- Rust
+- Bevy, Fyrox, ggez, macroquad
+- C++ (FFI only)
+- mlua (Luau + LuaJIT)
 
----
-
-### **4. Dahlia (multi-lang web server)**
-
-* **Why**:
-
-  * Great **learning project** → compare Go vs Rust vs Python server perf & DX.
-  * Recruiters see “systems + performance-minded” approach.
-  * Lower scope than rig, so a good stepping stone.
-
-* Best if you want to build **foundations for rig** and strengthen Go/Rust/Python synergy.
-
----
-
-### **5. Camellia (skill-sharing platform)**
-
-* **Why**:
-
-  * More of a **startup/product play** than a systems/backend/AIML flex.
-  * Useful for **full-stack practice** (React, TS, Go/Python backend).
-  * Less unique than others—market is crowded.
-
-* Not as aligned with your **career focus**, but good if you want **user-facing product** experience.
-
----
-
-### **6. SentiOS (AI-native OS)**
-
-* **Why**:
-
-  * Visionary moonshot 💡.
-  * Great **long-term passion project**, ties into your love for **systems + AI**.
-  * But too broad for now—risk of scope creep.
-
-* Save it as your **“flagship” future build** once you’ve sharpened Go/Rust/Python/AIML foundations.
-
----
-
-✅ **Recommended next build order for max impact:**
-
-1. **Nargis** → portfolio-ready AIML + backend + utility for yourself.
-2. **Convonnect** → real-time backend, concurrency, scaling.
-3. **Dahlia** → compare servers, build foundations for rig.
-4. **rig** → Go community-level systems project.
-5. **Camellia** → product/startup attempt.
-6. **SentiOS** → ultimate systems+AI passion project.
-
+*Common:*
+- DB: PostgreSQL, MongoDB, SQLite, DuckDB, Redis, ACID
+- Infra: Fly.io, Render, Vercel, Github Workflows/Actions, Coolify, Lifestream
+- Deployment: Docker Compose, Kubernetes, Inference APIs
