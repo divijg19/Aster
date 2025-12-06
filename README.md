@@ -13,7 +13,7 @@ My finalization over my pursuits for the next 10 years:
 *Career stack:* immediate focus
 - Python(+Mojo)- DSA mastery- 
 
-Tier1 (Core)- Pandas, Numpy, Pydantic, FastAPI, Polars
+Tier1 (Core)- Pandas, Numpy, Pydantic, FastAPI, pgvector, Polars
 
 Tier2 (AI Eng)-  PyTorch,
 (LangChain)+ LangGraph, HuggingFace, LitServe
@@ -23,7 +23,7 @@ HTTPX, Ray, Mojo
  
 - Golang - DSA adept
 
-Tier1 (Core)- Chi, net/http, Coder/Websocket(nhooyr),pgx
+Tier1 (Core)- Chi, net/http, Coder/Websocket(nhooyr), pgx, sqlc
 
 Tier2 (Systems)- ConnectRPC, gRPC, Fiber, Viper, Cobra
 
