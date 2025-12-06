@@ -51,5 +51,5 @@ Next.js, React, Tanstack Query, shadcn UI, zod, Zustand✅
 
 *Common:*
 - DB: PostgreSQL, MongoDB, SQLite, DuckDB, Redis, ACID
-- Infra: Fly.io, Render, Vercel, Github Workflows/Actions, Coolify, Lifestream
+- Infra: Fly.io, Render, Vercel, Github Workflows/Actions, Coolify, Litestream
 - Deployment: Docker Compose, Kubernetes, Inference APIs
