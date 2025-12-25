@@ -1,4 +1,9 @@
 # Aster
+
+**Aster** — *A local-first developer cognition engine that builds and queries a semantic graph of concepts, decisions, and relationships across your code, docs, and work over time.*
+Meant to complement Sage(Chronicle) down the line if possible.
+
+
 Current business
 
 Writing-
