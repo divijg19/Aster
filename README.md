@@ -1,4 +1,4 @@
-# 🌸 Aster
+# 🌸 `Aster`
 
 > **Composite Code. Cultivated Performance.**
 
@@ -6,20 +6,20 @@
 ![Version](https://img.shields.io/badge/version-0.1.0--alpha-green)
 ![Status](https://img.shields.io/badge/status-experimental-orange)
 
-**Aster** (`.ax`) is a unified language environment that solves the *Two-Language Problem* by allowing high-level and low-level code to coexist in the **same syntax**, within the **same project**, under different execution contexts.
+**`Aster`** (`.ax`) is a unified language environment that solves the *Two-Language Problem* by allowing high-level and low-level code to coexist in the **same syntax**, within the **same project**, under different execution contexts.
 
-Instead of rewriting a prototype in another language, Aster lets you **change the environment**, not the code.
+Instead of rewriting a prototype in another language, `Aster` lets you **change the environment**, not the code.
 
 ---
 
 ## 🌺 Philosophy
 
-An **Aster** is a composite flower — what appears to be a single bloom is actually many structures working together.
+An **`Aster`** is a composite flower — what appears to be a single bloom is actually many structures working together.
 
 * The **Core** is inward, dense, and deterministic — where structure and performance live.
 * The **Crown** is outward, expressive, and adaptive — where interaction and iteration happen.
 
-In Aster, your code does not change.
+In `Aster`, your code does not change.
 **Only its environment does.**
 
 Execution behavior is defined by configuration, not syntax.
@@ -30,7 +30,7 @@ Execution behavior is defined by configuration, not syntax.
 
 | Component       | Name                | Description                                                 |
 | --------------- | ------------------- | ----------------------------------------------------------- |
-| Language        | **Aster**           | Unified syntax across execution environments                |
+| Language        | **`Aster`**           | Unified syntax across execution environments                |
 | Compiler        | **Proteus**         | Shape-shifting compiler targeting native or hosted runtimes |
 | Config          | **Calyx**           | Directory-level configuration (`calyx.ax`)                  |
 | Native Mode     | **Core**            | Deterministic, high-performance native execution            |
@@ -43,7 +43,7 @@ Execution behavior is defined by configuration, not syntax.
 
 ## 🏗️ Project Structure
 
-Aster is **biome-based**.
+`Aster` is **biome-based**.
 Each directory defines its execution environment via a `calyx.ax` file.
 
 ```text
@@ -56,7 +56,7 @@ Each directory defines its execution environment via a `calyx.ax` file.
   │   ├── main.ax
   │   └── calyx.ax
   │
-  └── aster.toml         <-- Workspace root
+  └── `Aster`.toml         <-- Workspace root
 ```
 
 ---
@@ -70,7 +70,7 @@ Each directory defines its execution environment via a `calyx.ax` file.
 ### `/core/calyx.ax` — Core Environment
 
 ```javascript
-import { Config } from "aster/calyx"
+import { Config } from "`Aster`/calyx"
 
 export const Environment = Config.define({
     mode: "core",          // Native execution
@@ -84,7 +84,7 @@ export const Environment = Config.define({
 ### `/ui/calyx.ax` — Crown Environment
 
 ```javascript
-import { Config } from "aster/calyx"
+import { Config } from "`Aster`/calyx"
 
 export const Environment = Config.define({
     mode: "crown",         // Hosted execution
@@ -95,7 +95,7 @@ export const Environment = Config.define({
 
 ---
 
-## 2️⃣ Aster Code (`.ax`)
+## 2️⃣ `Aster` Code (`.ax`)
 
 The syntax is consistent across environments — only semantics differ.
 
@@ -163,14 +163,14 @@ You write **one function call**.
 
 ## 📦 Rhizome (Package Manager)
 
-**Rhizome** distributes and resolves Aster modules across biomes.
+**Rhizome** distributes and resolves `Aster` modules across biomes.
 
 ```bash
 # Add a dependency
-aster rhi add https://github.com/aster-lang/lupine-math
+`Aster` rhi add https://github.com/`Aster`-lang/lupine-math
 
 # Build the workspace
-aster build
+`Aster` build
 ```
 
 Rhizome is environment-aware:
@@ -180,7 +180,7 @@ Core code never pulls Crown-only dependencies.
 
 ## 🌱 Lifecycle Vocabulary
 
-Aster exposes execution and failure states explicitly:
+`Aster` exposes execution and failure states explicitly:
 
 * **Dormancy** — compiled but inactive
 * **Bloom** — activated and live
@@ -194,20 +194,20 @@ These are user-facing concepts, not internal jargon.
 
 ## 🚀 Getting Started
 
-> ⚠️ Aster is currently **pre-alpha** and under active design.
+> ⚠️ `Aster` is currently **pre-alpha** and under active design.
 
 ```bash
-curl -s https://aster-lang.org/install.sh | bash
-aster init my-garden
+curl -s https://`Aster`-lang.org/install.sh | bash
+`Aster` init my-garden
 cd my-garden
-aster run ui/main.ax
+`Aster` run ui/main.ax
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Aster is a solo-led project seeking thoughtful collaborators (“Gardeners”) in:
+`Aster` is a solo-led project seeking thoughtful collaborators (“Gardeners”) in:
 
 * **Proteus** — compiler & codegen
 * **Lupine** — standard library expansion
@@ -217,4 +217,4 @@ Aster is a solo-led project seeking thoughtful collaborators (“Gardeners”) i
 
 ## 📄 License
 
-MIT © 2026 Aster Language
+MIT © 2026 `Aster` Language
