@@ -1,60 +1,220 @@
-# Aster
+# 🌸 Aster
 
-**Aster** — *A local-first developer cognition engine that builds and queries a semantic graph of concepts, decisions, and relationships across your code, docs, and work over time.*
-Meant to complement Sage(Chronicle) down the line if possible.
+> **Composite Code. Cultivated Performance.**
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-0.1.0--alpha-green)
+![Status](https://img.shields.io/badge/status-experimental-orange)
 
-Current business
+**Aster** (`.ax`) is a unified language environment that solves the *Two-Language Problem* by allowing high-level and low-level code to coexist in the **same syntax**, within the **same project**, under different execution contexts.
 
-Writing-
-Softer on my eyes- A metaphysical exploration of the vastness and ironical mundaneness of life from the lens of wilting youth.
-"Humans were meant to live in fear. Born in it, molded by it, naturally guided by it to survive. Perhaps the fact that we'd come so far as a species was paradoxical given the fact we still live in the same tendencies. There's a definite argument in psychology for the presence of 8 billion unique people, but also similarly for the infallacy that the entirety of the human race can be reduced to the same repetitive, identifiable yet humorous manifestations of the same set of tendencies in 8 billion fragmentations. Humanity, thus, was doomed to an predictable bounded limit in expected or probable behaviour."  
-
+Instead of rewriting a prototype in another language, Aster lets you **change the environment**, not the code.
 
 ---
 
-My finalization over my pursuits for the next 10 years:
+## 🌺 Philosophy
 
-*Career stack:* immediate focus
-- Python(+Mojo)- DSA mastery- 
+An **Aster** is a composite flower — what appears to be a single bloom is actually many structures working together.
 
-Tier1 (Core)- Pandas, Numpy, Pydantic, FastAPI, pgvector, Polars
+* The **Core** is inward, dense, and deterministic — where structure and performance live.
+* The **Crown** is outward, expressive, and adaptive — where interaction and iteration happen.
 
-Tier2 (AI Eng)-  PyTorch,
-(LangChain)+ LangGraph, HuggingFace, LitServe
+In Aster, your code does not change.
+**Only its environment does.**
 
-Tier3 (Scale and Inference)-
-HTTPX, Ray, Mojo
- 
-- Golang - DSA adept
+Execution behavior is defined by configuration, not syntax.
 
-Tier1 (Core)- Chi, net/http, Coder/Websocket(nhooyr), pgx, sqlc
+---
 
-Tier2 (Systems)- ConnectRPC, gRPC, Fiber, Viper, Cobra
+## 🌿 The Botanical Stack
 
-Study Gin and Gorilla/Websocket
+| Component       | Name                | Description                                                 |
+| --------------- | ------------------- | ----------------------------------------------------------- |
+| Language        | **Aster**           | Unified syntax across execution environments                |
+| Compiler        | **Proteus**         | Shape-shifting compiler targeting native or hosted runtimes |
+| Config          | **Calyx**           | Directory-level configuration (`calyx.ax`)                  |
+| Native Mode     | **Core**            | Deterministic, high-performance native execution            |
+| Hosted Mode     | **Crown**           | Adaptive, dynamic, GC-managed execution                     |
+| Interop         | **Graft**           | Auto-generated boundary bridges between Core and Crown      |
+| Std Library     | **Lupine**          | Dual-mode standard library                                  |
+| Package Manager | **Rhizome** (`rhi`) | Dependency distribution and resolution                      |
 
-Tier3 (Ops)- Temporal.io, Fx, Testcontainers
+---
 
-- Typescript ✅
+## 🏗️ Project Structure
 
-Next.js, React, Tanstack Query, shadcn UI, zod, Zustand✅
+Aster is **biome-based**.
+Each directory defines its execution environment via a `calyx.ax` file.
 
-*Personal projects/Passion:* occasional and self-paced
-- Golang- Gin/Chi/Fyne/Fiber/Viper/Cobra/Coder(nhooyr)
-- HTMX
-- Templ
-- Flutter
-- Zig
-- WASM, WebGPU, WebGL, Web3
+```text
+/my-project
+  ├── /core              <-- Core biome (native)
+  │   ├── physics.ax
+  │   └── calyx.ax
+  │
+  ├── /ui                <-- Crown biome (hosted)
+  │   ├── main.ax
+  │   └── calyx.ax
+  │
+  └── aster.toml         <-- Workspace root
+```
 
-*Game dev part-time:* becomes focus when comfort with job
-- Rust
-- Bevy, Fyrox, ggez, macroquad
-- C++ (FFI only)
-- mlua (Luau + LuaJIT)
+---
 
-*Common:*
-- DB: PostgreSQL, MongoDB, SQLite, DuckDB, Redis, ACID
-- Infra: Fly.io, Render, Vercel, Github Workflows/Actions, Coolify, Litestream
-- Deployment: Docker Compose, Kubernetes, Inference APIs
+## 💻 Usage
+
+### 1️⃣ Calyx Configuration
+
+`calyx.ax` defines how all `.ax` files in the directory are compiled and executed.
+
+### `/core/calyx.ax` — Core Environment
+
+```javascript
+import { Config } from "aster/calyx"
+
+export const Environment = Config.define({
+    mode: "core",          // Native execution
+    safety: "strict",      // No unsafe memory
+    optimization: "speed"
+})
+```
+
+---
+
+### `/ui/calyx.ax` — Crown Environment
+
+```javascript
+import { Config } from "aster/calyx"
+
+export const Environment = Config.define({
+    mode: "crown",         // Hosted execution
+    platform: "web",
+    hot_reload: true
+})
+```
+
+---
+
+## 2️⃣ Aster Code (`.ax`)
+
+The syntax is consistent across environments — only semantics differ.
+
+---
+
+### Core Code (Native, Deterministic)
+
+```typescript
+struct Vector3 {
+    x: f64
+    y: f64
+    z: f64
+}
+
+pub func add(v1: Vector3, v2: Vector3) -> Vector3 {
+    return Vector3 {
+        x: v1.x + v2.x,
+        y: v1.y + v2.y,
+        z: v1.z + v2.z
+    }
+}
+```
+
+This compiles to optimized native code via **Zig**.
+
+---
+
+### Crown Code (Hosted, Adaptive)
+
+```typescript
+import { Physics } from "../core/physics.ax"
+
+func on_click() {
+    let player_pos = { x: 10.0, y: 5.5, z: 0.0 }
+    let move_vec   = { x: 1.0,  y: 0.0, z: 0.0 }
+
+    // GRAFT:
+    // Dynamic Crown objects are serialized and
+    // packed automatically for Core execution.
+    let new_pos = Physics.add(player_pos, move_vec)
+
+    print("New Position: " + new_pos.x)
+}
+```
+
+This runs in a hosted JavaScript runtime (QuickJS, browser, or embed).
+
+---
+
+## 🧬 Graft — Core ↔ Crown Interop
+
+Cross-boundary calls require no manual FFI.
+
+When Crown code calls Core code:
+
+1. Proteus detects the boundary crossing
+2. Generates a C-compatible serialization layer
+3. Transforms layouts safely and deterministically
+4. Executes native logic
+5. Returns structured data back to Crown
+
+You write **one function call**.
+
+---
+
+## 📦 Rhizome (Package Manager)
+
+**Rhizome** distributes and resolves Aster modules across biomes.
+
+```bash
+# Add a dependency
+aster rhi add https://github.com/aster-lang/lupine-math
+
+# Build the workspace
+aster build
+```
+
+Rhizome is environment-aware:
+Core code never pulls Crown-only dependencies.
+
+---
+
+## 🌱 Lifecycle Vocabulary
+
+Aster exposes execution and failure states explicitly:
+
+* **Dormancy** — compiled but inactive
+* **Bloom** — activated and live
+* **Wilt** — recoverable degradation
+* **Blight** — unrecoverable failure
+* **Thorns** — enforced safety constraints
+
+These are user-facing concepts, not internal jargon.
+
+---
+
+## 🚀 Getting Started
+
+> ⚠️ Aster is currently **pre-alpha** and under active design.
+
+```bash
+curl -s https://aster-lang.org/install.sh | bash
+aster init my-garden
+cd my-garden
+aster run ui/main.ax
+```
+
+---
+
+## 🤝 Contributing
+
+Aster is a solo-led project seeking thoughtful collaborators (“Gardeners”) in:
+
+* **Proteus** — compiler & codegen
+* **Lupine** — standard library expansion
+* **Rhizome** — dependency resolution
+
+---
+
+## 📄 License
+
+MIT © 2026 Aster Language
