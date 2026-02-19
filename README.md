@@ -1,220 +1,439 @@
-# 🌸 `Aster`
+# `Aster`
 
-> **Composite Code. Cultivated Performance.**
+> A vertical language from intent to silicon.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-0.1.0--alpha-green)
-![Status](https://img.shields.io/badge/status-experimental-orange)
+![Status](https://img.shields.io/badge/status-experimental-red.svg)
+![Version](https://img.shields.io/badge/version-0.0.x--prototype-orange.svg)
 
-**`Aster`** (`.ax`) is a unified language environment that solves the *Two-Language Problem* by allowing high-level and low-level code to coexist in the **same syntax**, within the **same project**, under different execution contexts.
+**`Aster`** is a statically-typed systems language designed around one invariant:
 
-Instead of rewriting a prototype in another language, `Aster` lets you **change the environment**, not the code.
+> Human intent must survive lowering.
 
----
+`Aster` spans conceptual guarantees, structural definition, deterministic behavior, and exact machine execution — without implicit transitions, silent abstraction, or semantic leakage.
 
-## 🌺 Philosophy
-
-An **`Aster`** is a composite flower — what appears to be a single bloom is actually many structures working together.
-
-* The **Core** is inward, dense, and deterministic — where structure and performance live.
-* The **Crown** is outward, expressive, and adaptive — where interaction and iteration happen.
-
-In `Aster`, your code does not change.
-**Only its environment does.**
-
-Execution behavior is defined by configuration, not syntax.
+Source files use the `.ax` extension.
+The compiler CLI is `ax`.
 
 ---
 
-## 🌿 The Botanical Stack
+# Design Overview
 
-| Component       | Name                | Description                                                 |
-| --------------- | ------------------- | ----------------------------------------------------------- |
-| Language        | **`Aster`**           | Unified syntax across execution environments                |
-| Compiler        | **Proteus**         | Shape-shifting compiler targeting native or hosted runtimes |
-| Config          | **Calyx**           | Directory-level configuration (`calyx.ax`)                  |
-| Native Mode     | **Core**            | Deterministic, high-performance native execution            |
-| Hosted Mode     | **Crown**           | Adaptive, dynamic, GC-managed execution                     |
-| Interop         | **Graft**           | Auto-generated boundary bridges between Core and Crown      |
-| Std Library     | **Lupine**          | Dual-mode standard library                                  |
-| Package Manager | **Rhizome** (`rhi`) | Dependency distribution and resolution                      |
+`Aster` is built around three orthogonal axes:
+
+1. **Epistemic Modes** — how we reason about systems
+2. **Targets** — where code executes
+3. **Domain Profiles** — what constraints apply
+
+These axes are independent and composable.
 
 ---
 
-## 🏗️ Project Structure
+# I. Epistemic Modes (Fixed, Universal)
 
-`Aster` is **biome-based**.
-Each directory defines its execution environment via a `calyx.ax` file.
+`Aster` defines exactly four epistemic modes.
+They are permanent and non-negotiable.
 
-```text
+They are not runtime switches.
+They are layers of truth.
+
+---
+
+## 1. Concept Mode — *Why*
+
+Expresses:
+
+* Invariants
+* Guarantees
+* Safety constraints
+* Capability policies
+* SLOs
+
+Properties:
+
+* Non-executable
+* No time
+* No memory
+* No control flow
+
+Concept Mode constrains all lower layers.
+If intent cannot be upheld → compile error.
+
+---
+
+## 2. Structure Mode — *What exists*
+
+Defines:
+
+* Types
+* Ownership models
+* Memory layout
+* Component topology
+* Interfaces
+
+Properties:
+
+* Non-executable
+* Deterministic
+* Spatial (not temporal)
+
+Structure Mode shapes the ontology of the system.
+
+---
+
+## 3. Control Mode — *How it behaves*
+
+Defines:
+
+* Algorithms
+* Explicit control flow
+* Deterministic execution
+* Concurrency
+* Memory usage
+
+Properties:
+
+* Executable
+* Explicit
+* Abstracted from physical instruction selection
+
+Most application logic lives here.
+
+---
+
+## 4. Machine Mode — *What silicon does*
+
+Defines:
+
+* Instruction DAGs (not linear assembly)
+* Virtual registers
+* Explicit memory contracts
+* ISA-parametric intent (x86, ARM, RISC-V, WASM)
+* Hard lowering guarantees
+
+Rules:
+
+* No optimizer freedom
+* No implicit instruction selection
+* No silent rewriting
+* If lowering cannot be exact → compile error
+
+Machine Mode is the lowest layer humans are allowed to author.
+
+---
+
+# II. Targets (Execution Backends)
+
+Targets define where code executes.
+
+They are not epistemic modes.
+They are deployment envelopes.
+
+Examples:
+
+* `native`
+* `hosted`
+* `wasm`
+* `bare`
+* `kernel`
+
+Targets may enable or restrict certain epistemic modes.
+
+For example:
+
+* `native` may allow Machine Mode
+* `hosted` may seal Machine Mode
+* `wasm` may restrict instruction contracts
+
+Targets are extensible.
+
+---
+
+# III. Domain Profiles (Constraint Envelopes)
+
+Domains define constraint profiles.
+
+They:
+
+* Enable or disable epistemic modes
+* Restrict constructs
+* Set concurrency and memory defaults
+* Enforce safety guarantees
+
+Domains do not add abstractions.
+They remove freedom.
+
+Examples:
+
+### UI Domain
+
+* Concept + Structure emphasized
+* Machine Mode sealed
+* Managed execution
+* No timing guarantees
+
+### Embedded Domain
+
+* All modes allowed
+* No allocation after init
+* Fixed memory
+* ISA restricted
+
+### Systems Domain
+
+* Structure + Control dominant
+* Machine optional
+* Deterministic concurrency
+
+Domains are orthogonal to Targets.
+
+---
+
+# IV. Biomes
+
+`Aster` projects are organized into **biomes**.
+
+A biome is a directory governed by a `calyx.ax` configuration file.
+
+Each biome defines:
+
+* Target
+* Domain profile
+* Allowed epistemic modes
+* Constraint policies
+
+Example:
+
+```
 /my-project
-  ├── /core              <-- Core biome (native)
-  │   ├── physics.ax
-  │   └── calyx.ax
+  ├── /engine
+  │   ├── calyx.ax
+  │   └── physics.ax
   │
-  ├── /ui                <-- Crown biome (hosted)
-  │   ├── main.ax
-  │   └── calyx.ax
+  ├── /ui
+  │   ├── calyx.ax
+  │   └── view.ax
   │
-  └── `Aster`.toml         <-- Workspace root
+  └── `Aster`.toml
 ```
+
+Architecture is spatial, not syntactic.
 
 ---
 
-## 💻 Usage
+# Calyx Configuration
 
-### 1️⃣ Calyx Configuration
+`calyx.ax` defines biome behavior.
 
-`calyx.ax` defines how all `.ax` files in the directory are compiled and executed.
+Example:
 
-### `/core/calyx.ax` — Core Environment
-
-```javascript
+```ax
 import { Config } from "`Aster`/calyx"
 
 export const Environment = Config.define({
-    mode: "core",          // Native execution
-    safety: "strict",      // No unsafe memory
-    optimization: "speed"
+    target: "native",
+    domain: "embedded",
+    machine: "enabled",
+    safety: "strict"
 })
+```
+
+Calyx does not introduce semantics.
+It constrains them.
+
+---
+
+# 🌿 The Botanical Stack
+
+`Aster` retains its botanical naming scheme, each tied to a concrete architectural role.
+
+| Component         | Name                   | Description                                                                     |
+| ----------------- | ---------------------- | ------------------------------------------------------------------------------- |
+| Language          | **``Aster``**            | Vertically structured language spanning Concept → Structure → Control → Machine |
+| Compiler          | **Proteus**            | Lowering engine translating `.ax` through IR into target backends               |
+| Configuration     | **Calyx**              | Biome-level configuration (`calyx.ax`) defining target, domain, and constraints |
+| Execution Backend | **Target**             | Deployment backend (`native`, `hosted`, `wasm`, etc.)                           |
+| Domain Profile    | **Domain**             | Constraint envelope shaping semantics and capability                            |
+| Boundary System   | **Graft**              | Explicit, generated bridges between biomes and targets                          |
+| Standard Library  | **Lupine**             | Mode-aware, target-aware standard library                                       |
+| Package Manager   | **Rhizome** (`ax rhi`) | Deterministic dependency resolution and distribution                            |
+| Ephemeral Runner  | **`axx`**              | Fast experimental runner for development                                        |
+
+---
+
+# V. Graft — Explicit Boundary Crossing
+
+When code crosses biome boundaries:
+
+* Target differences are resolved
+* Domain constraints are enforced
+* Epistemic legality is checked
+* Serialization or ABI layers are generated if required
+
+There are no hidden FFI boundaries.
+
+Graft makes cross-boundary interaction explicit and auditable.
+
+---
+
+# VI. Rhizome — Package Distribution
+
+`Aster` uses **Rhizome** (`ax rhi`) for dependency management.
+
+Rhizome is:
+
+* Target-aware
+* Domain-aware
+* Deterministic
+* Lockfile-driven
+
+Example:
+
+```bash
+ax rhi add github.com/example/lib
+ax build
 ```
 
 ---
 
-### `/ui/calyx.ax` — Crown Environment
+# Language Basics (.ax)
 
-```javascript
-import { Config } from "`Aster`/calyx"
+## Primitive Types
 
-export const Environment = Config.define({
-    mode: "crown",         // Hosted execution
-    platform: "web",
-    hot_reload: true
-})
+```
+i32
+i64
+f32
+f64
+bool
 ```
 
+All types are explicit.
+
+No implicit casting.
+No hidden allocation.
+
 ---
 
-## 2️⃣ `Aster` Code (`.ax`)
+## Structs (Structure Mode)
 
-The syntax is consistent across environments — only semantics differ.
-
----
-
-### Core Code (Native, Deterministic)
-
-```typescript
+```ax
 struct Vector3 {
     x: f64
     y: f64
     z: f64
 }
+```
 
-pub func add(v1: Vector3, v2: Vector3) -> Vector3 {
+---
+
+## Functions (Control Mode)
+
+```ax
+pub func add(a: Vector3, b: Vector3) -> Vector3 {
     return Vector3 {
-        x: v1.x + v2.x,
-        y: v1.y + v2.y,
-        z: v1.z + v2.z
+        x: a.x + b.x,
+        y: a.y + b.y,
+        z: a.z + b.z
     }
 }
 ```
 
-This compiles to optimized native code via **Zig**.
-
 ---
 
-### Crown Code (Hosted, Adaptive)
+## Control Flow
 
-```typescript
-import { Physics } from "../core/physics.ax"
-
-func on_click() {
-    let player_pos = { x: 10.0, y: 5.5, z: 0.0 }
-    let move_vec   = { x: 1.0,  y: 0.0, z: 0.0 }
-
-    // GRAFT:
-    // Dynamic Crown objects are serialized and
-    // packed automatically for Core execution.
-    let new_pos = Physics.add(player_pos, move_vec)
-
-    print("New Position: " + new_pos.x)
-}
+```ax
+if (cond) { }
+while (cond) { }
 ```
 
-This runs in a hosted JavaScript runtime (QuickJS, browser, or embed).
+---
+
+# Compiler Architecture
+
+The `ax` compiler pipeline:
+
+```
+.ax
+  ↓
+Lexer
+  ↓
+Parser → AST
+  ↓
+Type Check
+  ↓
+Typed IR
+  ↓
+Target Lowering
+  ↓
+Backend (Zig / WASM / etc.)
+```
+
+Machine Mode integrates before final lowering.
 
 ---
 
-## 🧬 Graft — Core ↔ Crown Interop
+# CLI
 
-Cross-boundary calls require no manual FFI.
-
-When Crown code calls Core code:
-
-1. Proteus detects the boundary crossing
-2. Generates a C-compatible serialization layer
-3. Transforms layouts safely and deterministically
-4. Executes native logic
-5. Returns structured data back to Crown
-
-You write **one function call**.
-
----
-
-## 📦 Rhizome (Package Manager)
-
-**Rhizome** distributes and resolves `Aster` modules across biomes.
+Compile:
 
 ```bash
-# Add a dependency
-`Aster` rhi add https://github.com/`Aster`-lang/lupine-math
-
-# Build the workspace
-`Aster` build
+ax build file.ax
 ```
 
-Rhizome is environment-aware:
-Core code never pulls Crown-only dependencies.
-
----
-
-## 🌱 Lifecycle Vocabulary
-
-`Aster` exposes execution and failure states explicitly:
-
-* **Dormancy** — compiled but inactive
-* **Bloom** — activated and live
-* **Wilt** — recoverable degradation
-* **Blight** — unrecoverable failure
-* **Thorns** — enforced safety constraints
-
-These are user-facing concepts, not internal jargon.
-
----
-
-## 🚀 Getting Started
-
-> ⚠️ `Aster` is currently **pre-alpha** and under active design.
+Run:
 
 ```bash
-curl -s https://`Aster`-lang.org/install.sh | bash
-`Aster` init my-garden
-cd my-garden
-`Aster` run ui/main.ax
+ax run file.ax
+```
+
+Ephemeral runner:
+
+```bash
+axx file.ax
 ```
 
 ---
 
-## 🤝 Contributing
+# Current Implementation Status
 
-`Aster` is a solo-led project seeking thoughtful collaborators (“Gardeners”) in:
+The current public prototype focuses on:
 
-* **Proteus** — compiler & codegen
-* **Lupine** — standard library expansion
-* **Rhizome** — dependency resolution
+* Structure + Control
+* Deterministic lowering to Zig
+* Native target
+* No Machine Mode (yet)
+* No hosted target (yet)
+
+The vertical architecture is defined and will be implemented incrementally.
 
 ---
 
-## 📄 License
+# Roadmap
 
-MIT © 2026 `Aster` Language
+| Version | Milestone                                                  |
+| ------- | ---------------------------------------------------------- |
+| v0.0.x  | Minimal deterministic lowering (Structure + Control → Zig) |
+| v0.1    | Multi-file + Calyx + biome architecture                    |
+| v0.2    | Ownership model                                            |
+| v0.3    | Hosted target                                              |
+| v0.4    | Machine Mode                                               |
+| v1.0    | Stable vertical system                                     |
+
+---
+
+# Philosophy
+
+`Aster` is not designed for convenience.
+It is designed for correctness across layers.
+
+> Where intent cannot be preserved, compilation must fail.
+
+`Aster` defines the boundary between human reasoning and silicon execution — and refuses to blur it.
+
+---
+
+# License
+
+MIT © 2026 `Aster`
